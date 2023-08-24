@@ -1,0 +1,6 @@
+﻿  ChatServer-AsycNotiIO.c
+E:\project_2023\CPP\Server-Programming-Study\Asynchronous-Notification-IO-Model\ChatServer\ChatServer-AsycNotiIO.c(108,15): warning C4020: 'puts': 실제 매개 변수가 너무 많습니다.
+E:\project_2023\CPP\Server-Programming-Study\Asynchronous-Notification-IO-Model\ChatServer\ChatServer-AsycNotiIO.c(133,29): warning C4047: '함수': 'SOCKET *'의 간접 참조 수준이 'HANDLE [64]'과(와) 다릅니다.
+E:\project_2023\CPP\Server-Programming-Study\Asynchronous-Notification-IO-Model\ChatServer\ChatServer-AsycNotiIO.c(133,20): warning C4024: 'CompressEvents': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
+E:\project_2023\CPP\Server-Programming-Study\Asynchronous-Notification-IO-Model\ChatServer\ChatServer-AsycNotiIO.c(148,30): warning C4028: 정식 매개 변수 1이(가) 선언과 다릅니다.
+  ChatServer.vcxproj -> E:\project_2023\CPP\Server-Programming-Study\Asynchronous-Notification-IO-Model\Debug\ChatServer.exe

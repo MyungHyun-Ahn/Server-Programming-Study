@@ -35,15 +35,17 @@ CompletionPort에 할당되는 쓰레드의 의미
 #define READ	3
 #define	WRITE	5
 
-typedef struct    // socket info
+// 소켓 정보
+typedef struct
 {
 	SOCKET hClntSock;
 	SOCKADDR_IN clntAdr;
 } PER_HANDLE_DATA, * LPPER_HANDLE_DATA;
 
-typedef struct    // buffer info
+// 버퍼 정보
+typedef struct
 {
-	OVERLAPPED overlapped;
+	OVERLAPPED overlapped; // Overlapped 구조체
 	WSABUF wsaBuf;
 	char buffer[BUF_SIZE];
 	int rwMode;    // READ or WRITE
@@ -67,9 +69,13 @@ int main()
 	if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
 		ErrorHandling("WSAStartup() error!");
 
+	// Completion Port 생성
 	hComPort = CreateIoCompletionPort(INVALID_HANDLE_VALUE, NULL, 0, 0);
+
+	// 실제 코어의 수 얻어내기
 	GetSystemInfo(&sysInfo);
 
+	// 실제 코어의 수만큼 쓰레드를 실행
 	for (i = 0; i < sysInfo.dwNumberOfProcessors; i++)
 		_beginthreadex(NULL, 0, EchoThreadMain, (LPVOID)hComPort, 0, NULL);
 
@@ -88,22 +94,25 @@ int main()
 		SOCKADDR_IN clntAdr;
 		int addrLen = sizeof(clntAdr);
 
+		// Client accept
 		hClntSock = accept(hServSock, (SOCKADDR*)&clntAdr, &addrLen);
 
 		handleInfo = (LPPER_HANDLE_DATA)malloc(sizeof(PER_HANDLE_DATA));
 		handleInfo->hClntSock = hClntSock;
 		memcpy(&(handleInfo->clntAdr), &clntAdr, addrLen);
-
+		
+		// 반환된 클라이언트 소켓과 CP 오브젝트를 연결
 		CreateIoCompletionPort((HANDLE)hClntSock, hComPort, (DWORD)handleInfo, 0);
 
 		ioInfo = (LPPER_IO_DATA)malloc(sizeof(PER_IO_DATA));
 		memset(&(ioInfo->overlapped), 0, sizeof(OVERLAPPED));
 		ioInfo->wsaBuf.len = BUF_SIZE;
 		ioInfo->wsaBuf.buf = ioInfo->buffer;
-		ioInfo->rwMode = READ;
+		ioInfo->rwMode = READ; // READ 할 것이라는 정보
 
-		WSARecv(handleInfo->hClntSock, &(ioInfo->wsaBuf),
-			1, &recvBytes, &flags, &(ioInfo->overlapped), NULL);
+		// READ를 위한 Recv 함수를 호출
+		// Recv가 완료 -> CP에서 이를 인지하고 Send 수행
+		WSARecv(handleInfo->hClntSock, &(ioInfo->wsaBuf), 1, &recvBytes, &flags, &(ioInfo->overlapped), NULL);
 	}
 	return 0;
 }
@@ -119,8 +128,8 @@ DWORD WINAPI EchoThreadMain(LPVOID pComPort)
 
 	while (1)
 	{
-		GetQueuedCompletionStatus(hComPort, &bytesTrans,
-			(LPDWORD)&handleInfo, (LPOVERLAPPED*)&ioInfo, INFINITE);
+		// 완료된 것이 있는지 확인
+		GetQueuedCompletionStatus(hComPort, &bytesTrans,(LPDWORD)&handleInfo, (LPOVERLAPPED*)&ioInfo, INFINITE);
 		sock = handleInfo->hClntSock;
 
 		if (ioInfo->rwMode == READ)
@@ -136,16 +145,15 @@ DWORD WINAPI EchoThreadMain(LPVOID pComPort)
 			memset(&(ioInfo->overlapped), 0, sizeof(OVERLAPPED));
 			ioInfo->wsaBuf.len = bytesTrans;
 			ioInfo->rwMode = WRITE;
-			WSASend(sock, &(ioInfo->wsaBuf),
-				1, NULL, 0, &(ioInfo->overlapped), NULL);
+			WSASend(sock, &(ioInfo->wsaBuf), 1, NULL, 0, &(ioInfo->overlapped), NULL);
 
 			ioInfo = (LPPER_IO_DATA)malloc(sizeof(PER_IO_DATA));
 			memset(&(ioInfo->overlapped), 0, sizeof(OVERLAPPED));
 			ioInfo->wsaBuf.len = BUF_SIZE;
 			ioInfo->wsaBuf.buf = ioInfo->buffer;
 			ioInfo->rwMode = READ;
-			WSARecv(sock, &(ioInfo->wsaBuf),
-				1, NULL, &flags, &(ioInfo->overlapped), NULL);
+
+			WSARecv(sock, &(ioInfo->wsaBuf), 1, NULL, &flags, &(ioInfo->overlapped), NULL);
 		}
 		else
 		{

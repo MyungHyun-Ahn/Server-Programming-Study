@@ -296,7 +296,6 @@ private:
 			if (IOOperation::RECV == pOverlappedEx->m_eOperation)
 			{
 				pClientInfo->m_recvBuf[dwIoSize] = NULL;
-				// printf("[수신] bytes : %d , msg : %s\n", dwIoSize, (pClientInfo->m_recvBuf + 5));
 
 				// 데이터 수신 정보 애플리케이션에 전달
 				OnReceive(pClientInfo->m_socketClient, dwIoSize, (pClientInfo->m_recvBuf + 5));

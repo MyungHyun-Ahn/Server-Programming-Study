@@ -364,6 +364,8 @@ private:
 
 			// 클라이언트 접속 요청이 들어올 때까지 기다린다.
 			pClientInfo->m_socketClient = accept(mListenSocket, (SOCKADDR*)&stClientAddr, &nAddLen);
+			printf("Blocking??");
+
 			if (INVALID_SOCKET == pClientInfo->m_socketClient)
 			{
 				continue;

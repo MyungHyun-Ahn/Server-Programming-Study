@@ -261,7 +261,7 @@ private:
 			else if (IOOperation::ACCEPT == pOverlappedEx->m_eOperation)
 			{
 				pClientInfo = GetClientInfo(pOverlappedEx->m_clientIndex);
-				if (false == pClientInfo->AcceptCompletion(mIOCPHandle))
+				if (pClientInfo->AcceptCompletion(mIOCPHandle))
 				{
 					++mClientCnt;
 
@@ -283,18 +283,7 @@ private:
 	// 사용자의 접속을 받는 쓰레드
 	void AccepterThread()
 	{
-		for (auto client : mClientInfos)
-		{
-			if (client->IsSend())
-				continue;
-
-			client->SendIO();
-		}
-	}
-
-	void SendThread()
-	{
-		while (mIsSenderRun)
+		while (mIsAccepterRun)
 		{
 			auto nowTimeSec = std::chrono::duration_cast<std::chrono::seconds>(std::chrono::steady_clock::now().time_since_epoch()).count();
 			for (auto client : mClientInfos)
@@ -310,6 +299,20 @@ private:
 					continue;
 
 				client->PostAccept(mListenSocket);
+			}
+		}
+	}
+
+	void SendThread()
+	{
+		while (mIsSenderRun)
+		{
+			for (auto client : mClientInfos)
+			{
+				if (client->IsSend())
+					continue;
+
+				client->SendIO();
 			}
 		}
 	}

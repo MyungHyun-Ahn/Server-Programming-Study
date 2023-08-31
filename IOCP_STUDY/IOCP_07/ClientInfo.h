@@ -87,7 +87,7 @@ public:
 		m_stAcceptOverlappedEx.m_eOperation = IOOperation::ACCEPT;
 		m_stAcceptOverlappedEx.m_clientIndex = mIndex;
 
-		if (AcceptEx(listenSocket, m_socketClient, mAcceptBuf, 0, sizeof(SOCKADDR_IN) + 16, sizeof(SOCKADDR_IN) + 16, &bytes, (LPWSAOVERLAPPED)&m_stAcceptOverlappedEx) == false)
+		if (AcceptEx(listenSocket, m_socketClient, mAcceptBuf, 0, sizeof(SOCKADDR_IN) + 16, sizeof(SOCKADDR_IN) + 16, nullptr, (LPWSAOVERLAPPED)&m_stAcceptOverlappedEx) == false)
 		{
 			if (WSA_IO_PENDING != WSAGetLastError())
 			{
@@ -105,7 +105,7 @@ public:
 
 		if (false == OnConnect(iocpHandle))
 		{
-			CloseSocket(m_socketClient);
+			// CloseSocket(m_socketClient);
 			return false;
 		}
 

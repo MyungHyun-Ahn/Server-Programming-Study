@@ -105,7 +105,7 @@ public:
 
 		if (false == OnConnect(iocpHandle))
 		{
-			// CloseSocket(m_socketClient);
+			CloseSocket(m_socketClient);
 			return false;
 		}
 

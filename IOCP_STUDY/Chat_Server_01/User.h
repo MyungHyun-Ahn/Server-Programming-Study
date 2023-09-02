@@ -1,17 +1,16 @@
 #pragma once
-#include "pch.h"
+
+enum class DOMAIN_STATE
+{
+	NONE = 0,
+	LOGIN = 1,
+	ROOM = 2,
+};
 
 class User
 {
 public:
 	const UINT32 PACKET_DATA_BUFFER_SIZE = 8096;
-
-	enum class DOMAIN_STATE
-	{
-		NONE = 0,
-		LOGIN = 1,
-		ROOM = 2,
-	};
 
 	User() = default;
 	~User() = default;
@@ -35,9 +34,9 @@ private:
 	INT32 _index = -1;
 	INT32 _roomIndex = -1;
 
-	string _userID;
+	std::string _userID;
 	bool _isConfirm = false;
-	string _authToken;
+	std::string _authToken;
 
 	DOMAIN_STATE _curDomainState = DOMAIN_STATE::NONE;
 

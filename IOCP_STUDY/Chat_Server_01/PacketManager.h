@@ -1,6 +1,4 @@
 #pragma once
-#include "pch.h"
-
 class PacketManager
 {
 public:
@@ -14,7 +12,7 @@ public:
 	void ReceivePacketData(const UINT32 clientIndex, const UINT32 size, char* pData);
 	void PushSystemPacket(PacketInfo packet);
 
-	function<void(UINT32, UINT32, char*)> SendPacketFunc;
+	std::function<void(UINT32, UINT32, char*)> SendPacketFunc;
 
 private:
 	void CreateComponent(const UINT32 maxClient);
@@ -34,11 +32,11 @@ private:
 	typedef void(PacketManager::* PROCESS_RECV_PACKET_FUNCTION)(UINT32, UINT16, char*);
 	std::unordered_map<int, PROCESS_RECV_PACKET_FUNCTION> _recvFuntionDictionary;
 
-	function<void(int, char*)> _sendMQDataFunc;
+	std::function<void(int, char*)> _sendMQDataFunc;
 	bool _isRunProcessThread = false;
-	thread _processThread;
-	mutex _lock;
-	deque<UINT32> _inComingPacketUserIndex;
-	deque<PacketInfo> _systemPacketQueue;
+	std::thread _processThread;
+	std::mutex _lock;
+	std::deque<UINT32> _inComingPacketUserIndex;
+	std::deque<PacketInfo> _systemPacketQueue;
 };
 

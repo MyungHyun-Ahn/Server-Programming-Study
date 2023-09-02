@@ -1,5 +1,4 @@
 #pragma once
-#include "pch.h"
 
 class UserManager
 {
@@ -25,7 +24,7 @@ private:
 	INT32 _maxUserCnt = 0;
 	INT32 _currentUserCnt = 0;
 
-	vector<User*> _userObjPool;
-	unordered_map<string, int> _userIDDictionary;
+	std::vector<User*> _userObjPool;
+	std::unordered_map<std::string, int> _userIDDictionary;
 };
 

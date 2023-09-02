@@ -18,6 +18,6 @@ struct OverlappedEx
 {
 	WSAOVERLAPPED	_wsaOverlapped;		//Overlapped I/O구조체
 	WSABUF			_wsaBuf;				//Overlapped I/O작업 버퍼
-	IOOperation		_eOperation;			//작업 동작 종류
+	IOOperation		_operation;			//작업 동작 종류
 	UINT32			_sessionIndex = 0;
 };

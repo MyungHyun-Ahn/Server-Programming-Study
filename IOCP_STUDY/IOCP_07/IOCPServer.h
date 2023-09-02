@@ -1,3 +1,6 @@
+#include "..\Chat_Server_01\IOCPServer.h"
+#include "..\Chat_Server_01\IOCPServer.h"
+#include "..\Chat_Server_01\IOCPServer.h"
 #pragma once
 #include "pch.h"
 
@@ -147,6 +150,19 @@ private:
 	stClientInfo* GetClientInfo(const UINT32 clientIndex)
 	{
 		return mClientInfos[clientIndex];
+	}
+
+	inline bool IOCPServer::CreateWorkerThread()
+	{
+		return false;
+	}
+
+	inline void IOCPServer::WorkerThread()
+	{
+	}
+
+	inline void IOCPServer::CloseSocket()
+	{
 	}
 
 	// WaitingThread Queue에서 대기할 쓰레드들을 생성

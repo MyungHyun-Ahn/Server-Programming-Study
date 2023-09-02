@@ -1,2 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" />
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ServerNetwork">
+      <UniqueIdentifier>{41664092-68c1-4fb7-92bd-c39eeabb05da}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="IOCPServer.h">
+      <Filter>ServerNetwork</Filter>
+    </ClInclude>
+    <ClInclude Include="Define.h">
+      <Filter>ServerNetwork</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientInfo.h">
+      <Filter>ServerNetwork</Filter>
+    </ClInclude>
+    <ClInclude Include="ChatServer.h" />
+    <ClInclude Include="ErrorCode.h" />
+    <ClInclude Include="Packet.h" />
+    <ClInclude Include="PacketManager.h" />
+    <ClInclude Include="User.h" />
+    <ClInclude Include="UserManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="ClientInfo.cpp">
+      <Filter>ServerNetwork</Filter>
+    </ClCompile>
+    <ClCompile Include="IOCPServer.cpp">
+      <Filter>ServerNetwork</Filter>
+    </ClCompile>
+    <ClCompile Include="ChatServer.cpp" />
+    <ClCompile Include="PacketManager.cpp" />
+    <ClCompile Include="User.cpp" />
+    <ClCompile Include="UserManager.cpp" />
+  </ItemGroup>
+</Project>

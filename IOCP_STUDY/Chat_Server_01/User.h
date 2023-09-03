@@ -15,33 +15,33 @@ public:
 	User() = default;
 	~User() = default;
 
-	void Init(const INT32 index);
-	void Clear();
+	void			Init(const INT32 index);
+	void			Clear();
 
-	int SetLogin(char* userID);
-	void EnterRoom(INT32 roomIndex);
-	void SetDomainState(DOMAIN_STATE value) { }
+	int				SetLogin(char* userID);
+	void			EnterRoom(INT32 roomIndex);
+	void			SetDomainState(DOMAIN_STATE value) { }
 
-	INT32 GetCurrentRoom();
-	INT32 GetNetConnIdx();
-	INT32 GetUserId() const;
-	DOMAIN_STATE GetDomainState();
-	PacketInfo GetPacket();
+	INT32			GetCurrentRoom();
+	INT32			GetNetConnIdx();
+	std::string		GetUserId() const;
+	DOMAIN_STATE	GetDomainState();
+	PacketInfo		GetPacket();
 
-	void SetPacketData(const UINT32 dataSize, char* pData);
+	void			SetPacketData(const UINT32 dataSize, char* pData);
 
 private:
-	INT32 _index = -1;
-	INT32 _roomIndex = -1;
+	INT32				_index = -1;
+	INT32				_roomIndex = -1;
 
-	std::string _userID;
-	bool _isConfirm = false;
-	std::string _authToken;
+	std::string			_userID;
+	bool				_isConfirm = false;
+	std::string			_authToken;
 
-	DOMAIN_STATE _curDomainState = DOMAIN_STATE::NONE;
+	DOMAIN_STATE		_curDomainState = DOMAIN_STATE::NONE;
 
-	UINT32 _packetDataBufferWPos = 0;
-	UINT32 _packetDataBufferRPos = 0;
-	char* _packetDataBuffer = nullptr;
+	UINT32				_packetDataBufferWPos = 0;
+	UINT32				_packetDataBufferRPos = 0;
+	char*				_packetDataBuffer = nullptr;
 };
 

@@ -17,13 +17,13 @@ struct RawPacketData
 		CopyMemory(pPacketData, vlaue.pPacketData, vlaue.DataSize);
 	}
 
-	void Set(UINT32 clientIndex_, UINT32 dataSize_, char* pData)
+	void Set(UINT32 clientIndex, UINT32 dataSize, char* pData)
 	{
-		ClientIndex = clientIndex_;
-		DataSize = dataSize_;
+		ClientIndex = clientIndex;
+		DataSize = dataSize;
 
-		pPacketData = new char[dataSize_];
-		CopyMemory(pPacketData, pData, dataSize_);
+		pPacketData = new char[dataSize];
+		CopyMemory(pPacketData, pData, dataSize);
 	}
 
 	void Release()

@@ -1,0 +1,7 @@
+﻿main.obj : error LNK2019: _freeReplyObject"public: bool __thiscall RedisCpp::CRedisConn::auth(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?auth@CRedisConn@RedisCpp@@QAE_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) 함수에서 참조되는 확인할 수 없는 외부 기호
+main.obj : error LNK2019: _redisConnectWithTimeout"public: bool __thiscall RedisCpp::CRedisConn::connect(void)" (?connect@CRedisConn@RedisCpp@@QAE_NXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
+main.obj : error LNK2019: _redisFree"public: bool __thiscall RedisCpp::CRedisConn::connect(void)" (?connect@CRedisConn@RedisCpp@@QAE_NXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
+main.obj : error LNK2019: _redisvCommand"public: struct redisReply * __cdecl RedisCpp::CRedisConn::redisCmd(char const *,...)" (?redisCmd@CRedisConn@RedisCpp@@QAAPAUredisReply@@PBDZZ) 함수에서 참조되는 확인할 수 없는 외부 기호
+main.obj : error LNK2019: _redisCommand"public: bool __thiscall RedisCpp::CRedisConn::auth(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?auth@CRedisConn@RedisCpp@@QAE_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) 함수에서 참조되는 확인할 수 없는 외부 기호
+E:\project_2023\CPP\Server-Programming-Study\IOCP_STUDY\lib\Release\hiredis.lib : warning LNK4272: 'x64' 라이브러리 컴퓨터 종류가 'x86' 대상 컴퓨터 종류와 충돌합니다.
+E:\project_2023\CPP\Server-Programming-Study\IOCP_STUDY\Debug\Redis_Test.exe : fatal error LNK1120: 5개의 확인할 수 없는 외부 참조입니다.

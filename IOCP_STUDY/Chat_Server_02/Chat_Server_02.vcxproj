@@ -18,6 +18,33 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ChatServer.h" />
+    <ClInclude Include="ClientInfo.h" />
+    <ClInclude Include="Define.h" />
+    <ClInclude Include="ErrorCode.h" />
+    <ClInclude Include="IOCPServer.h" />
+    <ClInclude Include="Packet.h" />
+    <ClInclude Include="PacketManager.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="RedisManager.h" />
+    <ClInclude Include="RedisTaskDefine.h" />
+    <ClInclude Include="User.h" />
+    <ClInclude Include="UserManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ChatServer.cpp" />
+    <ClCompile Include="ClientInfo.cpp" />
+    <ClCompile Include="IOCPServer.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="PacketManager.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="RedisManager.cpp" />
+    <ClCompile Include="User.cpp" />
+    <ClCompile Include="UserManager.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -80,6 +107,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>E:\project_2023\CPP\Server-Programming-Study\IOCP_STUDY\Redis\hiredis;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\project_2023\CPP\Server-Programming-Study\IOCP_STUDY\lib\Debug;E:\project_2023\CPP\Server-Programming-Study\IOCP_STUDY\lib\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -118,6 +147,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

@@ -8,19 +8,25 @@
 #include <map>
 #include <stdexcept>
 
+#ifdef _MSC_VER
 #pragma comment(lib, "ws2_32.lib")
 #pragma comment(lib, "hiredis.lib")
 
-#include <WinSock2.h>
+#include <winsock.h>
+#endif
 
+#ifdef _MSC_VER
 #pragma warning(push)
 #pragma warning(disable:4200)
 #include <hiredis.h>
 #pragma warning(pop)
+#else
+#include <hiredis.h>
+#endif
 
 #ifndef DISALLOW_COPY_AND_ASSIGN
 #define DISALLOW_COPY_AND_ASSIGN( typeName )	\
-	typeName( const typeName & );				\
+	typeName( const typeName & );		\
 	typeName & operator=( const typeName & )
 #endif
 

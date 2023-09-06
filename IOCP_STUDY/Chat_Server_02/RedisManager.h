@@ -1,6 +1,5 @@
 #pragma once
 #include "../Redis/RedisConn.h"
-#include "RedisTaskDefine.h"
 
 class RedisManager
 {
@@ -19,7 +18,11 @@ private:
 	bool		Connect(std::string ip, UINT16 port);
 	void		TaskProcessThread();
 	RedisTask	TakeRequestTask();
+
+	void		TakeLoginRequestTask(RedisTask task);
 	void		PushResponse(RedisTask task);
+
+	void		Test();
 
 private:
 	RedisCpp::CRedisConn		_Conn;
@@ -31,6 +34,5 @@ private:
 
 	std::mutex					_resLock;
 	std::deque<RedisTask>		_responseTask;
-
 };
 

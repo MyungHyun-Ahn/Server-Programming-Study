@@ -1,11 +1,7 @@
 #pragma once
-#pragma once
 
 #define WIN32_LEAN_AND_MEAN
-#include <windows.h>
 
-#include "ErrorCode.h"
-#include "Packet.h"
 enum class RedisTaskID : UINT16
 {
 	INVALID = 0,

@@ -25,6 +25,8 @@
 #include <deque>
 #include <queue>
 #include <unordered_map>
+#include <list>
+#include <map>
 
 // д©╫╨ер
 #include "ClientInfo.h"
@@ -32,5 +34,4 @@
 #include "ErrorCode.h"
 #include "Packet.h"
 #include "User.h"
-
-#include "../Redis/RedisConn.h"
+#include "RedisTaskDefine.h"

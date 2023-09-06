@@ -1049,8 +1049,8 @@ namespace RedisCpp
 			"No error.",
 			"NULL pointer ",
 			"No connection to the redis server.",
-					"Inser Error,pivot not found.",
-					"key not found",
+			"Inser Error,pivot not found.",
+			"key not found",
 			"hash field not found",
 			"error index"
 	};

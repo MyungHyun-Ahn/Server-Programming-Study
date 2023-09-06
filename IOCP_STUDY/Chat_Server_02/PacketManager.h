@@ -1,6 +1,7 @@
 #pragma once
 
 class UserManager;
+class RedisManager;
 
 class PacketManager
 {
@@ -30,14 +31,17 @@ private:
 	void			ProcessUserConnect(UINT32 clientIndex, UINT16 packetSize, char* pPacket);
 	void			ProcessUserDisConnect(UINT32 clientIndex, UINT16 packetSize, char* pPacket);
 	void			ProcessLogin(UINT32 clientIndex, UINT16 packetSize, char* pPacket);
+	void			ProcessLoginDBResult(UINT32 clientIndex, UINT16 packetSIze, char* pPacket);
 
 private:
 	typedef void(PacketManager::* PROCESS_RECV_PACKET_FUNCTION)(UINT32, UINT16, char*);
 	std::unordered_map<int, PROCESS_RECV_PACKET_FUNCTION>	_recvFuntionDictionary;
 
 	UserManager*											_userManager;
+	RedisManager*											_redisManager;
 
 	std::function<void(int, char*)>							_sendMQDataFunc;
+
 	bool													_isRunProcessThread = false;
 	std::thread												_processThread;
 	std::mutex												_lock;

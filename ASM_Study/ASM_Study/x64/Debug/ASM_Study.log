@@ -1,0 +1,102 @@
+﻿  main.cpp
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(9,2): error C4235: 비표준 확장이 사용됨: 이 아키텍처에서는 '__asm' 키워드를 사용할 수 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(11,3): error C2065: 'lea': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(11,7): error C2146: 구문 오류: ';'이(가) 'esi' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(11,7): error C2065: 'esi': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(11,12): error C2065: 'dword': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(11,18): error C2146: 구문 오류: ';'이(가) 'ptr' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(11,18): error C2065: 'ptr': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(12,3): error C2146: 구문 오류: ';'이(가) 'lea' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(12,3): error C2065: 'lea': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(12,7): error C2146: 구문 오류: ';'이(가) 'edi' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(12,7): error C2065: 'edi': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(12,12): error C2065: 'dword': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(12,18): error C2146: 구문 오류: ';'이(가) 'ptr' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(12,18): error C2065: 'ptr': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(14,5): error C2065: 'copy': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(14,10): error C2143: 구문 오류: ';'이(가) 'user-defined literal' 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(14,10): error C3688: 잘못된 리터럴 접두사 'byte'입니다. 리터럴 연산자 또는 리터럴 연산자 템플릿 '연산자 ""byte'을(를) 찾을 수 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(15,3): error C2146: 구문 오류: ';'이(가) 'mov' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(15,3): error C2065: 'mov': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(15,7): error C2146: 구문 오류: ';'이(가) 'al' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(15,7): error C2065: 'al': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(15,11): error C2065: 'byte': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(15,16): error C2146: 구문 오류: ';'이(가) 'ptr' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(15,16): error C2065: 'ptr': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(15,20): error C2065: 'esi': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(16,3): error C2146: 구문 오류: ';'이(가) 'mov' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(16,3): error C2065: 'mov': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(16,7): error C2146: 구문 오류: ';'이(가) 'byte' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(16,7): error C2065: 'byte': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(16,12): error C2146: 구문 오류: ';'이(가) 'ptr' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(16,12): error C2065: 'ptr': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(16,16): error C2065: 'edi': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(16,22): error C2065: 'al': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(18,5): error C2065: 'copy': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(18,10): error C2143: 구문 오류: ';'이(가) 'user-defined literal' 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(18,10): error C3688: 잘못된 리터럴 접두사 'byte'입니다. 리터럴 연산자 또는 리터럴 연산자 템플릿 '연산자 ""byte'을(를) 찾을 수 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(19,3): error C2146: 구문 오류: ';'이(가) 'mov' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(19,3): error C2065: 'mov': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(19,7): error C2146: 구문 오류: ';'이(가) 'ax' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(19,7): error C2065: 'ax': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(19,11): error C2065: 'word': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(19,16): error C2146: 구문 오류: ';'이(가) 'ptr' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(19,16): error C2065: 'ptr': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(19,20): error C2065: 'esi': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(20,3): error C2146: 구문 오류: ';'이(가) 'mov' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(20,3): error C2065: 'mov': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(20,7): error C2146: 구문 오류: ';'이(가) 'word' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(20,7): error C2065: 'word': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(20,12): error C2146: 구문 오류: ';'이(가) 'ptr' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(20,12): error C2065: 'ptr': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(20,16): error C2065: 'edi': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(20,22): error C2065: 'ax': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(22,5): error C2065: 'copy': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(22,10): error C2143: 구문 오류: ';'이(가) 'user-defined literal' 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(22,10): error C3688: 잘못된 리터럴 접두사 'byte'입니다. 리터럴 연산자 또는 리터럴 연산자 템플릿 '연산자 ""byte'을(를) 찾을 수 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(23,3): error C2146: 구문 오류: ';'이(가) 'mov' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(23,3): error C2065: 'mov': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(23,7): error C2146: 구문 오류: ';'이(가) 'eax' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(23,7): error C2065: 'eax': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(23,12): error C2065: 'dword': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(23,18): error C2146: 구문 오류: ';'이(가) 'ptr' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(23,18): error C2065: 'ptr': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(23,22): error C2065: 'esi': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(24,3): error C2146: 구문 오류: ';'이(가) 'mov' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(24,3): error C2065: 'mov': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(24,7): error C2146: 구문 오류: ';'이(가) 'dword' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(24,7): error C2065: 'dword': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(24,13): error C2146: 구문 오류: ';'이(가) 'ptr' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(24,13): error C2065: 'ptr': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(24,17): error C2065: 'edi': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(24,23): error C2065: 'eax': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(26,5): error C2065: 'copy': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(26,10): error C2143: 구문 오류: ';'이(가) 'user-defined literal' 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(26,10): error C3688: 잘못된 리터럴 접두사 'byte'입니다. 리터럴 연산자 또는 리터럴 연산자 템플릿 '연산자 ""byte'을(를) 찾을 수 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(27,5): error C2065: 'mov': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(27,9): error C2146: 구문 오류: ';'이(가) 'ecx' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(27,9): error C2065: 'ecx': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(28,5): error C2065: 'shr': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(28,9): error C2146: 구문 오류: ';'이(가) 'ecx' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(28,9): error C2065: 'ecx': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(29,5): error C2065: 'rep': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(29,9): error C2146: 구문 오류: ';'이(가) 'movsd' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(29,9): error C2065: 'movsd': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(31,5): error C2065: 'copy': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(31,10): error C2143: 구문 오류: ';'이(가) 'user-defined literal' 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(31,10): error C3688: 잘못된 리터럴 접두사 'byte'입니다. 리터럴 연산자 또는 리터럴 연산자 템플릿 '연산자 ""byte'을(를) 찾을 수 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(32,3): error C2146: 구문 오류: ';'이(가) 'mov' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(32,3): error C2065: 'mov': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(32,7): error C2146: 구문 오류: ';'이(가) 'rcx' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(32,7): error C2065: 'rcx': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(33,3): error C2146: 구문 오류: ';'이(가) 'shr' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(33,3): error C2065: 'shr': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(33,7): error C2146: 구문 오류: ';'이(가) 'rcx' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(33,7): error C2065: 'rcx': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(34,3): error C2146: 구문 오류: ';'이(가) 'rep' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(34,3): error C2065: 'rep': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(34,7): error C2146: 구문 오류: ';'이(가) 'movsq' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(34,7): error C2065: 'movsq': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(36,3): error C2146: 구문 오류: ';'이(가) 'nop' 식별자 앞에 없습니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(36,3): error C2065: 'nop': 선언되지 않은 식별자입니다.
+E:\project_2023\CPP\Server-Programming-Study\ASM_Study\ASM_Study\main.cpp(37,2): error C2143: 구문 오류: ';'이(가) '}' 앞에 없습니다.

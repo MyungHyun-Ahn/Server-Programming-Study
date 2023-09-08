@@ -23,6 +23,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chat_Server_02", "Chat_Serv
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Redis_Test", "Redis_Test\Redis_Test.vcxproj", "{57189F1F-6825-4D07-ADF3-47F5BB570EE9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chat_Server_03", "Chat_Server_03\Chat_Server_03.vcxproj", "{D5C0F49C-2D68-4747-A9ED-D362E99CBF84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -111,6 +113,14 @@ Global
 		{57189F1F-6825-4D07-ADF3-47F5BB570EE9}.Release|x64.Build.0 = Release|x64
 		{57189F1F-6825-4D07-ADF3-47F5BB570EE9}.Release|x86.ActiveCfg = Release|Win32
 		{57189F1F-6825-4D07-ADF3-47F5BB570EE9}.Release|x86.Build.0 = Release|Win32
+		{D5C0F49C-2D68-4747-A9ED-D362E99CBF84}.Debug|x64.ActiveCfg = Debug|x64
+		{D5C0F49C-2D68-4747-A9ED-D362E99CBF84}.Debug|x64.Build.0 = Debug|x64
+		{D5C0F49C-2D68-4747-A9ED-D362E99CBF84}.Debug|x86.ActiveCfg = Debug|Win32
+		{D5C0F49C-2D68-4747-A9ED-D362E99CBF84}.Debug|x86.Build.0 = Debug|Win32
+		{D5C0F49C-2D68-4747-A9ED-D362E99CBF84}.Release|x64.ActiveCfg = Release|x64
+		{D5C0F49C-2D68-4747-A9ED-D362E99CBF84}.Release|x64.Build.0 = Release|x64
+		{D5C0F49C-2D68-4747-A9ED-D362E99CBF84}.Release|x86.ActiveCfg = Release|Win32
+		{D5C0F49C-2D68-4747-A9ED-D362E99CBF84}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

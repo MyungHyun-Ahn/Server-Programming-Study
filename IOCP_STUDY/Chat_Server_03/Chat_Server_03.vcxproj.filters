@@ -13,6 +13,8 @@
     <ClCompile Include="UserManager.cpp" />
     <ClCompile Include="ChatServer.cpp" />
     <ClCompile Include="ClientInfo.cpp" />
+    <ClCompile Include="Room.cpp" />
+    <ClCompile Include="RoomManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IOCPServer.h" />
@@ -27,5 +29,7 @@
     <ClInclude Include="ClientInfo.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="ErrorCode.h" />
+    <ClInclude Include="Room.h" />
+    <ClInclude Include="RoomManager.h" />
   </ItemGroup>
 </Project>

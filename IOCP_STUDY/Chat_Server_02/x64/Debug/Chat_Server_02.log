@@ -1,4 +1,6 @@
 ﻿  PacketManager.cpp
+  RedisManager.cpp
+  코드를 생성하고 있습니다...
 LINK : warning LNK4075: '/INCREMENTAL'이(가) '/FORCE' 사양으로 인해 무시됩니다.
 RedisManager.obj : warning LNK4006: "enum RedisCpp::INSERT_POS RedisCpp::E_INSERT_POS" (?E_INSERT_POS@RedisCpp@@3W4INSERT_POS@1@A)이(가) PacketManager.obj에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
 RedisManager.obj : warning LNK4006: "private: static char const * * RedisCpp::CRedisConn::_errDes" (?_errDes@CRedisConn@RedisCpp@@0PAPEBDA)이(가) PacketManager.obj에 이미 정의되어 있습니다. 초 정의가 무시됩니다.

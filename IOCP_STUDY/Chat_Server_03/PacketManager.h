@@ -2,6 +2,7 @@
 
 class UserManager;
 class RedisManager;
+class RoomManager;
 
 class PacketManager
 {
@@ -32,6 +33,9 @@ private:
 	void			ProcessUserDisConnect(UINT32 clientIndex, UINT16 packetSize, char* pPacket);
 	void			ProcessLogin(UINT32 clientIndex, UINT16 packetSize, char* pPacket);
 	void			ProcessLoginDBResult(UINT32 clientIndex, UINT16 packetSIze, char* pPacket);
+	void			ProcessEnterRoom(UINT32 clientIndex, UINT16 packetSize, char* pPacket);
+	void			ProcessLeaveRoom(UINT32 clientIndex, UINT16 packetSize, char* pPacket);
+	void			ProcessRoomChatMessage(UINT32 clientIndex, UINT16 packetSize, char* pPacket);
 
 private:
 	typedef void(PacketManager::* PROCESS_RECV_PACKET_FUNCTION)(UINT32, UINT16, char*);
@@ -39,6 +43,7 @@ private:
 
 	UserManager*											_userManager;
 	RedisManager*											_redisManager;
+	RoomManager*											_roomManager;
 
 	std::function<void(int, char*)>							_sendMQDataFunc;
 
@@ -47,5 +52,6 @@ private:
 	std::mutex												_lock;
 	std::deque<UINT32>										_inComingPacketUserIndex;
 	std::deque<PacketInfo>									_systemPacketQueue;
+
 };
 

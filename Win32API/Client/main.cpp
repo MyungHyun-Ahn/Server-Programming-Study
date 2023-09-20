@@ -5,6 +5,7 @@
 
 #include "framework.h"
 #include "Client.h"
+#include "CCore.h"
 
 #define MAX_LOADSTRING 100
 
@@ -74,16 +75,10 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, // 프로세스가 실행되는 
     // PeekMessage는 함수가 바로 반환 - 비동기
     // 반환값의 의미 - 메시지가 있을 때와 없을 때
 
-
-    DWORD dwStartCount = GetTickCount(); // 1초당 1000 카운트
-    DWORD dwAccCount = 0;
-
     while (true)
     {
         if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE)) // PM_REMOVE 옵션을 주면 GetMessage와 거의 비슷해진다
         {
-            DWORD iTime = GetTickCount();
-
 			if (msg.message == WM_QUIT)
 				break;
 
@@ -92,29 +87,14 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, // 프로세스가 실행되는 
 				TranslateMessage(&msg);
 				DispatchMessage(&msg);
 			}
-            
-            dwAccCount += GetTickCount() - iTime;
         }
         // 메시지가 발생하지 않는 대부분의 시간
         else // 메시지가 없어도
         {
-            // 호출
-
-            DWORD dwNowCount = GetTickCount();
-
-            if (dwNowCount - dwStartCount > 1000)
-            {
-                float fRatio = (float)dwAccCount / 1000.f;
-
-                TCHAR szBuf[50] = {};
-                swprintf_s(szBuf, L"비율 : %f", fRatio);
-                SetWindowText(g_hWnd, szBuf);
-
-                dwStartCount = dwNowCount;
-            }
 
             // Game 코드 수행
             // 디자인 패턴(설계 유형)
+            // 싱글톤 패턴
         }
     }
 

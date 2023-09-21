@@ -1,6 +1,6 @@
 ﻿// Client.cpp : 애플리케이션에 대한 진입점을 정의합니다.
 //
-
+#include "pch.h"
 #include <vector>
 
 #include "framework.h"
@@ -52,6 +52,13 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, // 프로세스가 실행되는 
         return FALSE;
     }
 
+    // Core 초기화
+    if (FAILED(CCore::GetInstance()->init(g_hWnd, POINT{1280, 768})))
+    {
+        MessageBox(nullptr, L"Core 객체 초기화 실패", L"Error", MB_OK);
+        return FALSE;
+    }
+
     // 단축키 테이블 정보 로딩
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_CLIENT));
 
@@ -95,6 +102,10 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, // 프로세스가 실행되는 
             // Game 코드 수행
             // 디자인 패턴(설계 유형)
             // 싱글톤 패턴
+
+            // Core 클래스 작업
+
+            CCore::GetInstance()->progress();
         }
     }
 
@@ -172,23 +183,6 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //
 //
 
-using std::vector;
-
-struct stObjInfo
-{
-	POINT g_ptObjPos;
-	POINT g_ptObjScale;
-};
-
-vector<stObjInfo> g_vecInfo;
-
-// 좌 상단
-POINT g_ptLT;
-// 우 하단
-POINT g_ptRB;
-
-bool bLbtnDown = false;
-
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     switch (message)
@@ -216,57 +210,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
                     // 창을 완전히 줄였다가 켜면 발생한다. - 화면 전체에 대한 무효화 영역이 발생했다.
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hWnd, &ps); // Device Context 만들어서 ID를 반환
-            // 윈도우 핸들 : 운영체제에서 관리하는 커널 오브젝트
-            // 윈도우 좌표
-            // DC (Device Context) : 그리기 작업을 필요한 데이터들의 집합체
-            // DC의 목적지는 hWnd
-            // DC의 펜은 기본 펜(Black)
-            // DC의 브러쉬는 기본 브러쉬(White)
 
-            // 직접 펜을 만들어서 DC에 지급
-            HPEN hRedPen = CreatePen(PS_SOLID, 1, RGB(255, 0, 0));
-            HBRUSH hBlueBrush = CreateSolidBrush(RGB(0, 0, 255));
-                
-            // GetStockObject(); // 자주 쓰는 것들은 이미 만들어놨음
-            // DC 보고 이 펜을 선택하라고 함
-            HPEN hDefaultPen =  static_cast<HPEN>(SelectObject(hdc, hRedPen));
-            HBRUSH hDefaultBrush =  static_cast<HBRUSH>(SelectObject(hdc, hBlueBrush));
-
-            
-            if (bLbtnDown)
-            {
-				Rectangle(hdc
-					, g_ptLT.x
-					, g_ptLT.y
-					, g_ptRB.x
-					, g_ptRB.y);
-            }
-        
-
-            // 그려질 때마다 깜빡이는 현상
-            // 무효화 영역이 발생하면
-            // 추가한 물체가 다 다시 그려짐 - vector에 있는 것들이 전부
-            // 속도의 문제가 아닌 타이밍의 문제
-            // 60FPS 100FPS 뇌가 인지 가능함
-            // 그림을 그릴 종이를 한장만 준비했기 때문
-            // 메시지가 있을 때만 움직이는 문제
-            // 방법 1 억지로 하는 것 타이머를 세팅해서 일정 시간마다 갱신
-            for (size_t i = 0; i < g_vecInfo.size(); ++i)
-            {
-                Rectangle(hdc
-                    , g_vecInfo[i].g_ptObjPos.x - g_vecInfo[i].g_ptObjScale.x / 2
-					, g_vecInfo[i].g_ptObjPos.y - g_vecInfo[i].g_ptObjScale.y / 2
-					, g_vecInfo[i].g_ptObjPos.x + g_vecInfo[i].g_ptObjScale.x / 2
-					, g_vecInfo[i].g_ptObjPos.y + g_vecInfo[i].g_ptObjScale.y / 2);
-            }
-
-            // 펜을 돌려주기
-            SelectObject(hdc, hDefaultPen);
-            SelectObject(hdc, hDefaultBrush);
-
-            // 커널 오브젝트 삭제
-            DeleteObject(hRedPen);
-            DeleteObject(hBlueBrush);
+            // Rectangle(hdc, 1180, 0, 1280, 100);
 
             EndPaint(hWnd, &ps);
         }
@@ -274,91 +219,23 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
     case WM_KEYDOWN:
         {
-            // wParam에 입력된 키값이 들어감
-		    switch (wParam)
-		    {
-                // 살짝 딜레이가 있음
-                // 렌더링 - 프레임 : 화면에 얼마나 더 자주 그려주는가? - PC 게임 60FPS일 때 끊김이 없다고 느낌
-		    case VK_UP:
-                //g_ptObjPos.y -= 10; // 안 움직임 WM_PAINT 메시지 발생 안해서
-                InvalidateRect(hWnd, nullptr, true); // 무효화 영역을 함수로 직접 설정, 2번째 인자 nullptr - 전체 영역
-                                                     // 마지막 인자 true 화면을 지우고 다시 그림
-		    	break;
-
-			case VK_DOWN:
-				//g_ptObjPos.y += 10;
-				InvalidateRect(hWnd, nullptr, true);
-				break;
-
-			case VK_LEFT:
-				//g_ptObjPos.x -= 10;
-				InvalidateRect(hWnd, nullptr, true);
-				break;
-
-			case VK_RIGHT:
-				//g_ptObjPos.x += 10;
-				InvalidateRect(hWnd, nullptr, true);
-				break;
-
-
-		    case 'W': // 영문자 기준으로 아스키 코드 값으로 들어옴 - 대문자 기준
-
-		    	break;
-
-		    default:
-		    	break;
-		    }
         }
         break;
 
     case WM_LBUTTONDOWN:
     {
-        // lParam에 입력된 마우스 좌표가 들어옴
-
-        /*
-		LOWORD   ((WORD)(((DWORD_PTR)(l)) & 0xffff)) 하위 바이트
-		HIWORD   ((WORD)((((DWORD_PTR)(l)) >> 16) & 0xffff)) 상위 바이트
-        */
-        g_ptLT.x = LOWORD(lParam); // 마우스 X 좌표
-        g_ptLT.y =  HIWORD(lParam); // 마우스 Y 좌표
-        bLbtnDown = true;
     }
         break;
 
     case WM_MOUSEMOVE:
     {
-		g_ptRB.x = LOWORD(lParam); // 마우스 X 좌표
-		g_ptRB.y = HIWORD(lParam); // 마우스 Y 좌표
-        // InvalidateRect(hWnd, nullptr, true);
     }
         break;
 
     case WM_LBUTTONUP:
     {
-        // lParam에 입력된 마우스 좌표가 들어옴
 
-        /*
-        LOWORD   ((WORD)(((DWORD_PTR)(l)) & 0xffff)) 하위 바이트
-        HIWORD   ((WORD)((((DWORD_PTR)(l)) >> 16) & 0xffff)) 상위 바이트
-        */
-        g_ptRB.x = LOWORD(lParam); // 마우스 X 좌표
-        g_ptRB.y = HIWORD(lParam); // 마우스 Y 좌표
-
-        stObjInfo info = {};
-        info.g_ptObjPos.x = (g_ptLT.x + g_ptRB.x) / 2;
-        info.g_ptObjPos.y = (g_ptLT.y + g_ptRB.y) / 2;
-
-        info.g_ptObjScale.x = abs(g_ptLT.x - g_ptRB.x);
-        info.g_ptObjScale.y = abs(g_ptLT.y - g_ptRB.y);
-        
-        g_vecInfo.push_back(info);
-        bLbtnDown = false;
-        InvalidateRect(hWnd, nullptr, true);
     }
-    break;
-
-    case WM_TIMER:
-
         break;
 
     case WM_DESTROY:

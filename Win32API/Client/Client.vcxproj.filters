@@ -17,6 +17,18 @@
     <Filter Include="Engine\01. Header">
       <UniqueIdentifier>{5291c2ed-250a-422f-9f27-157a06ae415e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03. Manager">
+      <UniqueIdentifier>{2b60ade4-f4db-488d-abfc-5e0044f34159}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03. Manager\KeyManager">
+      <UniqueIdentifier>{2ce2d54d-1617-4a14-a22b-b4a8239ce5eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04. Object">
+      <UniqueIdentifier>{66f900d3-6669-4534-ac4e-d0f3f1846ea7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03. Manager\TimeManager">
+      <UniqueIdentifier>{b9a1595b-2cd5-4d35-8b02-4b9150198a7a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CCore.h">
@@ -33,6 +45,22 @@
     </ClInclude>
     <ClInclude Include="targetver.h">
       <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="define.h">
+      <Filter>Engine\01. Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CKeyManager.h">
+      <Filter>Engine\03. Manager\KeyManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CObject.h">
+      <Filter>Engine\04. Object</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="struct.h">
+      <Filter>Engine\01. Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CTimeManager.h">
+      <Filter>Engine\03. Manager\TimeManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -52,8 +80,15 @@
     <ClCompile Include="CCore.cpp">
       <Filter>Engine\02. Core</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Default</Filter>
+    <ClCompile Include="CKeyManager.cpp">
+      <Filter>Engine\03. Manager\KeyManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CObject.cpp">
+      <Filter>Engine\04. Object</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="CTimeManager.cpp">
+      <Filter>Engine\03. Manager\TimeManager</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

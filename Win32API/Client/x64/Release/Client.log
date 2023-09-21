@@ -1,0 +1,10 @@
+﻿  CCore.cpp
+  CKeyManager.cpp
+  CObject.cpp
+  CTimeManager.cpp
+  main.cpp
+  코드를 생성하고 있습니다.
+  Previous IPDB not found, fall back to full compilation.
+  All 42 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  코드를 생성했습니다.
+  Client.vcxproj -> E:\project_2023\CPP\Server-Programming-Study\Win32API\x64\Release\Client.exe

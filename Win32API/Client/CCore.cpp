@@ -3,12 +3,11 @@
 #include "CObject.h"
 #include "CTimeManager.h"
 #include "CKeyManager.h"
+#include "CSceneManager.h"
 
 // CCore* CCore::pCore = nullptr;
 // 윈도우 함수에서 반환 값 대부분 HRESULT hr
 // if (FAILED(E_FAIL))
-
-CObject g_obj;
 
 CCore::CCore() : m_hWnd(0)
 				, m_ptResolution{}
@@ -65,13 +64,7 @@ int CCore::init(HWND hWnd_, POINT ptResolution_)
 	// Manager 초기화
 	CTimeManager::GetInstance()->init();
 	CKeyManager::GetInstance()->init();
-
-
-	Vec2 vPos = Vec2((float)(m_ptResolution.x / 2), (float)(m_ptResolution.y / 2));
-	g_obj.SetPos(vPos);
-
-	Vec2 vScale = Vec2(100, 100);
-	g_obj.SetScale(vScale);
+	CSceneManager::GetInstance()->init();
 
 	return S_OK;
 }
@@ -88,54 +81,14 @@ void CCore::progress()
 
 	// Manager Update
 	CTimeManager::GetInstance()->update();
+	CKeyManager::GetInstance()->update();
+	CSceneManager::GetInstance()->update();
 
-	update();
 
-	render();
-
-	// 메시지 기능을 사용하지 않을 것임
-	// 그리기 - 여기다 넣으면 매 프레임마다 그리기를 호출할 것임
-
-}
-
-void CCore::update()
-{
-	// 키 입력 확인 - 메시지 안씀 - 이 때 쓰는 것이 비동기 키 입출력 함수
-
-	Vec2 vPos = g_obj.GetPos();
-
-	// 제일 상위 비트를 체크해서 눌렸는지 검증
-	if (GetAsyncKeyState(VK_LEFT) & 0x8000)
-	{
-		vPos.x -= 200.f * fDT;
-	}
-
-	if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
-	{
-		vPos.x += 200.f * fDT;
-	}
-
-	g_obj.SetPos(vPos);
-}
-
-void CCore::render()
-{
-	// 화면 Clear
-	// 흰색을 채우기 - 근데 느리다.
+	// Rendering
 	Rectangle(m_memDC, -1, -1, m_ptResolution.x + 1, m_ptResolution.y + 1);
 
-	Vec2 vPos = g_obj.GetPos();
-	Vec2 vScale = g_obj.GetScale();
+	CSceneManager::GetInstance()->render(m_memDC);
 
-	Rectangle(m_memDC
-		, int(vPos.x - vScale.x / 2.f)
-		, int(vPos.y - vScale.y / 2.f)
-		, int(vPos.x + vScale.x / 2.f)
-		, int(vPos.y + vScale.y / 2.f));
-
-
-	// 화면을 바꿔치기 - 복사 비용은 항상 동일 - 앞으로 더 드랍되기는 쉽지 않다.
 	BitBlt(m_hDC, 0, 0, m_ptResolution.x, m_ptResolution.y, m_memDC, 0, 0, SRCCOPY);
-
-	// CPU 만을 처리해서 동작하기 때문에 느려진다.
 }

@@ -29,6 +29,18 @@
     <Filter Include="Engine\03. Manager\TimeManager">
       <UniqueIdentifier>{b9a1595b-2cd5-4d35-8b02-4b9150198a7a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\05. Scene">
+      <UniqueIdentifier>{7627219c-d1e8-4196-b4f9-07707bf61b5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03. Manager\SceneManager">
+      <UniqueIdentifier>{e83086ae-ffbb-4264-912e-f3e8f1d1b155}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05. Scene\SceneStart">
+      <UniqueIdentifier>{42eedb7a-31f3-4a69-ba56-e2e90add6ab0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05. Scene\SceneTool">
+      <UniqueIdentifier>{770ab0b6-d91c-409b-a9f5-fde54bae2278}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CCore.h">
@@ -62,6 +74,18 @@
     <ClInclude Include="CTimeManager.h">
       <Filter>Engine\03. Manager\TimeManager</Filter>
     </ClInclude>
+    <ClInclude Include="CSceneManager.h">
+      <Filter>Engine\03. Manager\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>Engine\05. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneStart.h">
+      <Filter>Engine\05. Scene\SceneStart</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneTool.h">
+      <Filter>Engine\05. Scene\SceneTool</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Client.rc">
@@ -89,6 +113,18 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="CTimeManager.cpp">
       <Filter>Engine\03. Manager\TimeManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneManager.cpp">
+      <Filter>Engine\03. Manager\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>Engine\05. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneStart.cpp">
+      <Filter>Engine\05. Scene\SceneStart</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneTool.cpp">
+      <Filter>Engine\05. Scene\SceneTool</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

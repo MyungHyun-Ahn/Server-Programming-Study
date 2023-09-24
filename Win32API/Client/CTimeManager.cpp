@@ -24,8 +24,6 @@ void CTimeManager::init()
 
 	// 초당 카운트 횟수
 	QueryPerformanceFrequency(&m_llFrequency);
-
-
 }
 
 void CTimeManager::update()

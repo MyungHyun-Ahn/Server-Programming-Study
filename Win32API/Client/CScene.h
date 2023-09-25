@@ -20,19 +20,18 @@ public:
 
 
 	// 순수 가상 함수 CScene의 객체 생성 불가
-	virtual void Enter() = 0; // 해당 Scene 에 진입
-	virtual void Exit() = 0;  // 해당 Scene 에서 퇴장
+	virtual void	Enter() = 0; // 해당 Scene 에 진입
+	virtual void	Exit() = 0;  // 해당 Scene 에서 퇴장
 
-	void update();
-	void render(HDC dc_);
+	void			update();
+	void			render(HDC dc_);
 
-	void SetName(const wstring& strName_) { m_strName = strName_; }
-	const wstring& GetName() { return m_strName; }
+	void			SetName(const wstring& strName_) { m_strName = strName_; }
+	const wstring&	GetName() { return m_strName; }
 
-protected:
 	// 헤더에 함수를 작성하면 인라인
 	// 함수 호출 비용이 없음
-	void AddObject(CObject* pObj_, GROUP_TYPE type_)
+	void			AddObject(CObject* pObj_, GROUP_TYPE type_)
 	{
 		m_vecObj[(UINT)type_].push_back(pObj_);
 	}

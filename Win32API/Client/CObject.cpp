@@ -13,28 +13,17 @@ CObject::~CObject()
 {
 }
 
-void CObject::update()
-{
-	if (CKeyManager::GetInstance()->GetKeyState(KEY::W) == KEY_STATE::HOLD)
-	{
-		m_vPos.y -= 200.f * fDT;
-	}
-
-	if (CKeyManager::GetInstance()->GetKeyState(KEY::S) == KEY_STATE::HOLD)
-	{
-		m_vPos.y += 200.f * fDT;
-	}
-
-	if (CKeyManager::GetInstance()->GetKeyState(KEY::A) == KEY_STATE::HOLD)
-	{
-		m_vPos.x -= 200.f * fDT;
-	}
-
-	if (CKeyManager::GetInstance()->GetKeyState(KEY::D) == KEY_STATE::HOLD)
-	{
-		m_vPos.x += 200.f * fDT;
-	}
-}
+//void CObject::update()
+//{
+//	// 과연 문제가 없는 코드일까?
+//	// 앞으로 파생될 모든 오브젝트의 부모 오브젝트
+//	// 다른 것들도 움직이게 됨
+//	// Scene -> update가 모두 update
+//	// 오브젝트마다 하고자 하는 일은 모두 다르다.
+//	// Scene은 부모 포인터인 object로 관리는 하지만 실제 object는 다를 수 있다.
+//	// 가상 함수를 통해서 원하는 행위를 할 수 있게 해줌
+//	// 상속 - 다형성
+//}
 
 void CObject::render(HDC dc_)
 {

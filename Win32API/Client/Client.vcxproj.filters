@@ -41,6 +41,15 @@
     <Filter Include="Engine\05. Scene\SceneTool">
       <UniqueIdentifier>{770ab0b6-d91c-409b-a9f5-fde54bae2278}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\04. Object\Player">
+      <UniqueIdentifier>{c26d53b4-1117-4b80-a53b-71e09a422236}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04. Object\Monster">
+      <UniqueIdentifier>{4d3021b2-9c46-4455-96d3-6c679ab2db75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04. Object\Missile">
+      <UniqueIdentifier>{8291da0d-dcd1-42c3-8533-926f9e10299e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CCore.h">
@@ -86,6 +95,15 @@
     <ClInclude Include="CSceneTool.h">
       <Filter>Engine\05. Scene\SceneTool</Filter>
     </ClInclude>
+    <ClInclude Include="CPlayer.h">
+      <Filter>Engine\04. Object\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="CMonster.h">
+      <Filter>Engine\04. Object\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="CMissile.h">
+      <Filter>Engine\04. Object\Missile</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Client.rc">
@@ -125,6 +143,15 @@
     </ClCompile>
     <ClCompile Include="CSceneTool.cpp">
       <Filter>Engine\05. Scene\SceneTool</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayer.cpp">
+      <Filter>Engine\04. Object\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="CMonster.cpp">
+      <Filter>Engine\04. Object\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="CMissile.cpp">
+      <Filter>Engine\04. Object\Missile</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

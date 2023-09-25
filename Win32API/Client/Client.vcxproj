@@ -146,7 +146,10 @@
     <ClInclude Include="CCore.h" />
     <ClInclude Include="CKeyManager.h" />
     <ClInclude Include="Client.h" />
+    <ClInclude Include="CMissile.h" />
+    <ClInclude Include="CMonster.h" />
     <ClInclude Include="CObject.h" />
+    <ClInclude Include="CPlayer.h" />
     <ClInclude Include="CScene.h" />
     <ClInclude Include="CSceneManager.h" />
     <ClInclude Include="CSceneStart.h" />
@@ -162,7 +165,10 @@
   <ItemGroup>
     <ClCompile Include="CCore.cpp" />
     <ClCompile Include="CKeyManager.cpp" />
+    <ClCompile Include="CMissile.cpp" />
+    <ClCompile Include="CMonster.cpp" />
     <ClCompile Include="CObject.cpp" />
+    <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="CScene.cpp" />
     <ClCompile Include="CSceneManager.cpp" />
     <ClCompile Include="CSceneStart.cpp" />

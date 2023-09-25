@@ -6,14 +6,15 @@
 // 게임 처음 시작할 때
 // 장면 각 Scene 단위로 구분
 
+// 순수 가상 함수
 class CObject
 {
 public:
 	CObject();
 	virtual ~CObject();
 
-	void update();
-	void render(HDC dc_);
+	virtual void update() = 0;
+	virtual void render(HDC dc_);
 
 	void SetPos(Vec2 vPos_) { m_vPos = vPos_; }
 	void SetScale(Vec2 vScale_) { m_vScale = vScale_; }

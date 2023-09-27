@@ -31,8 +31,9 @@ Player 미사일 다양한 움직임
 당구 게임, 힘 기반 유도탄
 */
 
-CMissile::CMissile() 
+CMissile::CMissile()
 	: m_fDir(1.f)
+	, m_fSpeed(600.f)
 {
 }
 
@@ -44,7 +45,7 @@ void CMissile::update()
 {
 	Vec2 vPos = GetPos();
 
-	vPos.y += 600.f * fDT * m_fDir;
+	vPos.y += m_fSpeed * fDT * m_fDir;
 
 	SetPos(vPos);
 }

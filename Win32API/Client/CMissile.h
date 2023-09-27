@@ -24,6 +24,6 @@ public:
 
 private:
 	float m_fDir; // 위 아래 방향
-
+	float m_fSpeed;
 };
 

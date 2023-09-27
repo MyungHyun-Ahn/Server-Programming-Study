@@ -104,6 +104,9 @@
     <ClInclude Include="CMissile.h">
       <Filter>Engine\04. Object\Missile</Filter>
     </ClInclude>
+    <ClInclude Include="CCurvedMissile.h">
+      <Filter>Engine\04. Object\Missile</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Client.rc">
@@ -151,6 +154,9 @@
       <Filter>Engine\04. Object\Monster</Filter>
     </ClCompile>
     <ClCompile Include="CMissile.cpp">
+      <Filter>Engine\04. Object\Missile</Filter>
+    </ClCompile>
+    <ClCompile Include="CCurvedMissile.cpp">
       <Filter>Engine\04. Object\Missile</Filter>
     </ClCompile>
   </ItemGroup>

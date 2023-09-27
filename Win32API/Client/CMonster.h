@@ -19,6 +19,6 @@ private:
 
 	float		m_fSpeed;
 	float		m_fMaxDistance;
-	int			m_iDir; // 1, -1 방향
+	float		m_fDir; // 1, -1 방향
 };
 

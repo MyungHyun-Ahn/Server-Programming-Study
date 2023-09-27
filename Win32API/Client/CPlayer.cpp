@@ -5,6 +5,7 @@
 #include "CMissile.h"
 #include "CScene.h"
 #include "CSceneManager.h"
+#include "CCurvedMissile.h"
 
 void CPlayer::update()
 {
@@ -33,7 +34,7 @@ void CPlayer::update()
 
 	if (KEY_TAP(KEY::SPACE))
 	{
-		CreateMissile();
+		CreateCurvedMissile();
 	}
 
 	SetPos(vPos);
@@ -48,6 +49,25 @@ void CPlayer::CreateMissile()
 
 	pMissile->SetPos(vMissilePos);
 	pMissile->SetScale(Vec2(GetScale().x / 4.f, GetScale().y / 4.f));
+	pMissile->SetDir(true);
+
+	CScene* pCurScene = CSceneManager::GetInstance()->GetCurScene();
+
+	pCurScene->AddObject(pMissile, GROUP_TYPE::DEFAULT);
+}
+
+void CPlayer::CreateCurvedMissile()
+{
+	Vec2 vMissilePos = GetPos();
+	vMissilePos.y -= GetScale().y / 2.f;
+
+	CCurvedMissile* pMissile = new CCurvedMissile;
+
+	pMissile->SetPos(vMissilePos);
+	pMissile->SetScale(Vec2(GetScale().x / 4.f, GetScale().y / 4.f));
+
+	// 미사일 발사 시 현재 좌표
+	pMissile->SetCenter(GetPos());
 	pMissile->SetDir(true);
 
 	CScene* pCurScene = CSceneManager::GetInstance()->GetCurScene();

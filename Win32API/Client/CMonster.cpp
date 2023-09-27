@@ -6,7 +6,7 @@ CMonster::CMonster()
 	: m_vCenterPos(Vec2(0.f, 0.f))
 	, m_fSpeed(100.f)
 	, m_fMaxDistance(50.f)
-	, m_iDir(1)
+	, m_fDir(1.f)
 {
 }
 
@@ -19,7 +19,7 @@ void CMonster::update()
 	Vec2 vCurPos = GetPos();
 
 	// 이동 속도 만큼 이동 - 방향
-	vCurPos.x += fDT * m_fSpeed * m_iDir;
+	vCurPos.x += fDT * m_fSpeed * m_fDir;
 
 	// 배회 거리 체크
 	// 디테일한 상황
@@ -32,9 +32,9 @@ void CMonster::update()
 
 	if (0.f < fDiff)
 	{
-		m_iDir *= -1;
+		m_fDir *= -1;
 		// 초과한 만큼 되돌려주기
-		vCurPos.x += fDiff * m_iDir;
+		vCurPos.x += fDiff * m_fDir;
 	}
 
 	SetPos(vCurPos);

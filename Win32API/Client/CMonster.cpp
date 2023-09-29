@@ -1,12 +1,18 @@
 #include "pch.h"
 #include "CMonster.h"
 #include "CTimeManager.h"
+#include "CMissile.h"
+#include "CScene.h"
+#include "CSceneManager.h"
 
 CMonster::CMonster()
 	: m_vCenterPos(Vec2(0.f, 0.f))
 	, m_fSpeed(100.f)
 	, m_fMaxDistance(50.f)
 	, m_fDir(1.f)
+	, m_iStartTick(0)
+	, m_iCulTick(0)
+	, m_iMissileCool(5000)
 {
 }
 
@@ -16,6 +22,8 @@ CMonster::~CMonster()
 
 void CMonster::update()
 {
+	CheckMissileCoolTime();
+
 	Vec2 vCurPos = GetPos();
 
 	// 이동 속도 만큼 이동 - 방향
@@ -38,4 +46,32 @@ void CMonster::update()
 	}
 
 	SetPos(vCurPos);
+}
+
+void CMonster::CheckMissileCoolTime()
+{
+	m_iCulTick = GetTickCount64();
+
+	int diff = m_iCulTick - m_iStartTick;
+	if (diff > m_iMissileCool)
+	{
+		CreateMissile();
+		m_iStartTick = GetTickCount64();
+	}
+}
+
+void CMonster::CreateMissile()
+{
+	Vec2 vMissilePos = GetPos();
+	vMissilePos.y += GetScale().y / 2.f;
+
+	CMissile* pMissile = new CMissile;
+
+	pMissile->SetPos(vMissilePos);
+	pMissile->SetScale(Vec2(GetScale().x / 4.f, GetScale().y / 4.f));
+	pMissile->SetDir(false);
+
+	CScene* pCurScene = CSceneManager::GetInstance()->GetCurScene();
+
+	pCurScene->AddObject(pMissile, GROUP_TYPE::DEFAULT);
 }

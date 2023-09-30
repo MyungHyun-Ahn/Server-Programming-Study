@@ -34,7 +34,7 @@ void CPlayer::update()
 
 	if (KEY_TAP(KEY::SPACE))
 	{
-		CreateCurvedMissile();
+		CreateMissile();
 	}
 
 	SetPos(vPos);

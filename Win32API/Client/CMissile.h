@@ -22,9 +22,17 @@ public:
 		}
 	}
 
+	void SetDir(float fTheta_) { m_fTheta = fTheta_; }
+	void SetDir(Vec2 vDir_) 
+	{ 
+		m_vDir = vDir_;
+		m_vDir.Normalize();
+	}
+
 private:
-	float m_fDir; // 위 아래 방향
-	float m_fSpeed;
-	float m_fTheta;
+	float	m_fDir; // 위 아래 방향
+	float	m_fSpeed;
+	float	m_fTheta;
+	Vec2	m_vDir; // 방향 정보
 };
 

@@ -41,7 +41,9 @@ CMissile::CMissile()
 	: m_fDir(1.f)
 	, m_fSpeed(600.f)
 	, m_fTheta(PI / 4.f)
+	, m_vDir(Vec2(1.f, 1.f))
 {
+	m_vDir.Normalize();
 }
 
 CMissile::~CMissile()
@@ -73,17 +75,35 @@ tan = 기울기 값, 높이 / 밑변
 
 원의 좌표는 곧 (cos, sin) 각도는 세타
 
-벡터를 사용하는 방법
+벡터를 사용하는 방법 - 벡터가 상대적으로 더 편하다
+예를들어 45도 진행
+vector <-> scalar
+크기, 방향
+3, 2 -> 루트 13
+tan 세타 = 2 / 3
+각도는 -> 아크 tan
 
+1, 1 일 때 45도
+길이가 1일 때의 좌표를 알아야 함
+(cos45, sin45) * DT
 
+벡터의 정규화 normalize
+길이를 1로 맞춰주는 것
+
+회전도 편해짐
+삼각함수 합차 공식 사용
+원하는 축으로 회전
 */
 
 void CMissile::update()
 {
 	Vec2 vPos = GetPos();
 
-	vPos.x += m_fSpeed * cosf(m_fTheta) * fDT;
-	vPos.y += m_fDir * m_fSpeed * sinf(m_fTheta) * fDT;
+	// vPos.x += m_fSpeed * cosf(m_fTheta) * fDT;
+	// vPos.y += m_fDir * m_fSpeed * sinf(m_fTheta) * fDT;
+
+	vPos.x += m_fSpeed * m_vDir.x * fDT;
+	vPos.y += m_fSpeed * m_vDir.y * fDT;
 
 	SetPos(vPos);
 }

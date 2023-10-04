@@ -100,7 +100,7 @@ void CMissile::update()
 	Vec2 vPos = GetPos();
 
 	// vPos.x += m_fSpeed * cosf(m_fTheta) * fDT;
-	// vPos.y += m_fDir * m_fSpeed * sinf(m_fTheta) * fDT;
+	// vPos.y += m_fSpeed * sinf(m_fTheta) * fDT;
 
 	vPos.x += m_fSpeed * m_vDir.x * fDT;
 	vPos.y += m_fSpeed * m_vDir.y * fDT;

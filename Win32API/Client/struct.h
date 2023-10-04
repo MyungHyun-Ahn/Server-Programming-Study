@@ -17,11 +17,8 @@ public:
 	{
 		float fLen = Length();
 
-		assert(fLen != 0.f); // 0이 아니면 assert
+		assert(fLen != 0.f);
 
-		// 길이로 나눠줌 0으로 나누게 되면? -> 오류
-		// 정규화를 거치면 1보다 작았던 것들도 1로 맞춰짐
-		// 0, 0 은 말이 안된다.
 		x /= fLen;
 		y /= fLen;
 

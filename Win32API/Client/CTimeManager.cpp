@@ -33,7 +33,10 @@ void CTimeManager::update()
 	// 프레임마다 차이값
 	m_dDeltaTime = (double)(m_llCurCount.QuadPart - m_llPrevCount.QuadPart) / (double)m_llFrequency.QuadPart;
 	m_llPrevCount = m_llCurCount; // 다음 계산을 위하여 갱신
+}
 
+void CTimeManager::render()
+{
 	++m_iCallCount;
 	m_dAcc += m_dDeltaTime; // DT 누적
 
@@ -47,6 +50,5 @@ void CTimeManager::update()
 		wchar_t szBuffer[255] = {};
 		swprintf_s(szBuffer, L"FPS : %d, DT : %f", m_iFPS, m_dDeltaTime);
 		SetWindowText(CCore::GetInstance()->GetMainHandle(), szBuffer);
-
 	}
 }

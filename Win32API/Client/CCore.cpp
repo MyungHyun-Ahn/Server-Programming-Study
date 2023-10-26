@@ -4,6 +4,7 @@
 #include "CTimeManager.h"
 #include "CKeyManager.h"
 #include "CSceneManager.h"
+#include "CPathManager.h"
 
 // CCore* CCore::pCore = nullptr;
 // 윈도우 함수에서 반환 값 대부분 HRESULT hr
@@ -62,6 +63,7 @@ int CCore::init(HWND hWnd_, POINT ptResolution_)
 	DeleteObject(hOldBit);
 
 	// Manager 초기화
+	CPathManager::GetInstance()->init();
 	CTimeManager::GetInstance()->init();
 	CKeyManager::GetInstance()->init();
 	CSceneManager::GetInstance()->init();
@@ -91,4 +93,6 @@ void CCore::progress()
 	CSceneManager::GetInstance()->render(m_memDC);
 
 	BitBlt(m_hDC, 0, 0, m_ptResolution.x, m_ptResolution.y, m_memDC, 0, 0, SRCCOPY);
+
+	// CTimeManager::GetInstance()->render();
 }

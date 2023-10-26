@@ -78,9 +78,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)Output\bin_debug\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Output\bin\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -150,11 +152,15 @@
     <ClInclude Include="CMissile.h" />
     <ClInclude Include="CMonster.h" />
     <ClInclude Include="CObject.h" />
+    <ClInclude Include="CPathManager.h" />
     <ClInclude Include="CPlayer.h" />
+    <ClInclude Include="CResource.h" />
     <ClInclude Include="CScene.h" />
     <ClInclude Include="CSceneManager.h" />
     <ClInclude Include="CSceneStart.h" />
     <ClInclude Include="CSceneTool.h" />
+    <ClInclude Include="CSound.h" />
+    <ClInclude Include="CTexture.h" />
     <ClInclude Include="CTimeManager.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="framework.h" />
@@ -170,11 +176,15 @@
     <ClCompile Include="CMissile.cpp" />
     <ClCompile Include="CMonster.cpp" />
     <ClCompile Include="CObject.cpp" />
+    <ClCompile Include="CPathManager.cpp" />
     <ClCompile Include="CPlayer.cpp" />
+    <ClCompile Include="CResource.cpp" />
     <ClCompile Include="CScene.cpp" />
     <ClCompile Include="CSceneManager.cpp" />
     <ClCompile Include="CSceneStart.cpp" />
     <ClCompile Include="CSceneTool.cpp" />
+    <ClCompile Include="CSound.cpp" />
+    <ClCompile Include="CTexture.cpp" />
     <ClCompile Include="CTimeManager.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

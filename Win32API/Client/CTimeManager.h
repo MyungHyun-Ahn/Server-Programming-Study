@@ -15,6 +15,7 @@ class CTimeManager
 public:
 	void		init();
 	void		update();
+	void		render();
 
 	double		GetDeltaTime() { return m_dDeltaTime; }
 	float		GetfDeltaTime() { return (float)m_dDeltaTime; }

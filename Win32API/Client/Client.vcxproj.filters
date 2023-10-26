@@ -50,6 +50,18 @@
     <Filter Include="Engine\04. Object\Missile">
       <UniqueIdentifier>{8291da0d-dcd1-42c3-8533-926f9e10299e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\06. Resource">
+      <UniqueIdentifier>{5bfbe28d-325a-48b3-a6a4-bafe531829e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\06. Resource\Texture">
+      <UniqueIdentifier>{05de8ae8-6f33-481e-9559-0e0ebe60b332}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\06. Resource\Sound">
+      <UniqueIdentifier>{9c16fe97-5fc0-42a8-8ba8-a324e2c7cf16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03. Manager\PathManager">
+      <UniqueIdentifier>{e90fa277-02f6-4ac0-b86c-da7de77a87a0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CCore.h">
@@ -107,6 +119,18 @@
     <ClInclude Include="CCurvedMissile.h">
       <Filter>Engine\04. Object\Missile</Filter>
     </ClInclude>
+    <ClInclude Include="CResource.h">
+      <Filter>Engine\06. Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="CSound.h">
+      <Filter>Engine\06. Resource\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="CTexture.h">
+      <Filter>Engine\06. Resource\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="CPathManager.h">
+      <Filter>Engine\03. Manager\PathManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Client.rc">
@@ -158,6 +182,18 @@
     </ClCompile>
     <ClCompile Include="CCurvedMissile.cpp">
       <Filter>Engine\04. Object\Missile</Filter>
+    </ClCompile>
+    <ClCompile Include="CResource.cpp">
+      <Filter>Engine\06. Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="CSound.cpp">
+      <Filter>Engine\06. Resource\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="CTexture.cpp">
+      <Filter>Engine\06. Resource\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="CPathManager.cpp">
+      <Filter>Engine\03. Manager\PathManager</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -14,6 +14,7 @@ CMonster::CMonster()
 	, m_iCulTick(0)
 	, m_iMissileCool(5000)
 {
+	CreateCollider();
 }
 
 CMonster::~CMonster()
@@ -50,13 +51,13 @@ void CMonster::update()
 
 void CMonster::CheckMissileCoolTime()
 {
-	m_iCulTick = GetTickCount64();
+	m_iCulTick = (int)GetTickCount64();
 
 	int diff = m_iCulTick - m_iStartTick;
 	if (diff > m_iMissileCool)
 	{
 		CreateMissile();
-		m_iStartTick = GetTickCount64();
+		m_iStartTick = (int)GetTickCount64();
 	}
 }
 

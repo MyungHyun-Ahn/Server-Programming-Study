@@ -10,11 +10,14 @@
 // 윈도우 함수에서 반환 값 대부분 HRESULT hr
 // if (FAILED(E_FAIL))
 
-CCore::CCore() : m_hWnd(0)
-				, m_ptResolution{}
-				, m_hDC(0)
-				, m_hBit(0)
-				, m_memDC(0)
+CCore::CCore() 
+	: m_hWnd(0)
+	, m_ptResolution{}
+	, m_hDC(0)
+	, m_hBit(0)
+	, m_memDC(0)
+	, m_arrBrush{}
+	, m_arrPen{}
 {
 }
 
@@ -25,6 +28,11 @@ CCore::~CCore()
 	// 삭제하는 방법이 다르다
 	DeleteDC(m_memDC);
 	DeleteObject(m_hBit);
+
+	for (int i = 0; i < (UINT)PEN_TYPE::END; ++i)
+	{
+		DeleteObject(m_arrPen[i]);
+	}
 }
 
 
@@ -62,6 +70,9 @@ int CCore::init(HWND hWnd_, POINT ptResolution_)
 	HBITMAP hOldBit = (HBITMAP)SelectObject(m_memDC, m_hBit);
 	DeleteObject(hOldBit);
 
+	// 자주 사용할 펜 및 브러쉬 설정
+	CreateBrushPen();
+
 	// Manager 초기화
 	CPathManager::GetInstance()->init();
 	CTimeManager::GetInstance()->init();
@@ -95,4 +106,15 @@ void CCore::progress()
 	BitBlt(m_hDC, 0, 0, m_ptResolution.x, m_ptResolution.y, m_memDC, 0, 0, SRCCOPY);
 
 	// CTimeManager::GetInstance()->render();
+}
+
+void CCore::CreateBrushPen()
+{
+	// hollow brush - 직접 삭제 X
+	m_arrBrush[(UINT)BRUSH_TYPE::HOLLOW] = (HBRUSH)GetStockObject(HOLLOW_BRUSH);
+	 
+	// red blue green pen - 직접 삭제 O
+	m_arrPen[(UINT)PEN_TYPE::RED] = CreatePen(PS_SOLID, 1, RGB(255, 0, 0));
+	m_arrPen[(UINT)PEN_TYPE::BLUE] = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
+	m_arrPen[(UINT)PEN_TYPE::GREEN] = CreatePen(PS_SOLID, 1, RGB(0, 0, 255));
 }

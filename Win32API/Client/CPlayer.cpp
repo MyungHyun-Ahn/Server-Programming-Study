@@ -6,6 +6,35 @@
 #include "CScene.h"
 #include "CSceneManager.h"
 #include "CCurvedMissile.h"
+#include "CTexture.h"
+#include "CPathManager.h"
+#include "CResourceManager.h"
+
+// 리소스 매니저가 없다면 어디서 리소스가 로딩되는지 추적이 불가능
+
+CPlayer::CPlayer() : m_pTex(nullptr)
+{
+	// Texture 로딩
+	m_pTex = CResourceManager::GetInstance()->LoadTexture(L"PlayerTex", L"texture\\Player.bmp");
+
+	CreateCollider();
+
+	//m_pTex = new CTexture;
+	//wstring strFilepath = CPathManager::GetInstance()->GetContentPath();
+
+	//// 이미지 파일은 24비트 bmp 파일이어야 함
+	//strFilepath += L"texture\\Player.bmp";
+	//m_pTex->Load(strFilepath);
+}
+
+CPlayer::~CPlayer()
+{
+	/*if (m_pTex != nullptr)
+	{
+		delete m_pTex;
+		m_pTex = nullptr;
+	}*/
+}
 
 void CPlayer::update()
 {
@@ -38,6 +67,36 @@ void CPlayer::update()
 	}
 
 	SetPos(vPos);
+}
+
+void CPlayer::render(HDC dc_)
+{
+	// 여기서 texture를 관리하는 것이 아닌 Manager 객체를 통해 관리
+	int iWidth = (int)m_pTex->GetWidth();
+	int iHeight = (int)m_pTex->GetHeight();
+
+	Vec2 vPos = GetPos();
+
+	// 좌 상단
+	(int)(vPos.x - (float)(iWidth / 2));
+	(int)(vPos.y - (float)(iHeight / 2));
+
+	/*BitBlt(dc_
+		, (int)(vPos.x - (float)(iWidth / 2))
+		, (int)(vPos.y - (float)(iHeight / 2))
+		, iWidth, iHeight
+		, m_pTex->GetDC()
+		, 0, 0
+		, SRCCOPY);*/
+
+	// 설정한 색상을 투명화 - 주로 마젠타, 255, 0, 255
+	TransparentBlt(dc_
+		, (int)(vPos.x - (float)(iWidth / 2))
+		, (int)(vPos.y - (float)(iHeight / 2))
+		, iWidth, iHeight
+		, m_pTex->GetDC()
+		, 0, 0, iWidth, iHeight
+		, RGB(255, 0, 255));
 }
 
 void CPlayer::CreateMissile()

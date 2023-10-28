@@ -29,6 +29,10 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, // 프로세스가 실행되는 
                      _In_ LPWSTR    lpCmdLine, // 받아온 명령어 문자열 - 게임 프로그래밍에서 딱히 쓰이진 않음
                      _In_ int       nCmdShow) // 
 {
+    // 메모리 누수 체크
+    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+    // _CrtBreakAlloc();
+
     // 의미가 없는 즉, 쓰이지 않는다는 것을 알려주는 매크로
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);

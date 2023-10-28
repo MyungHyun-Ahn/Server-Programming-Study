@@ -44,11 +44,19 @@ class CCore
 {
 	SINGLE(CCore);
 public:
-	int init(HWND hWnd_, POINT ptResolution_);
-	void progress();
+	int			init(HWND hWnd_, POINT ptResolution_);
+	void		progress();
 
-	HWND GetMainHandle() { return m_hWnd; }
-	POINT GetResolution() { return m_ptResolution; }
+	HWND		GetMainHandle() { return m_hWnd; }
+	POINT		GetResolution() { return m_ptResolution; }
+	HDC			GetMainDC() { return m_hDC; }
+
+	HBRUSH		GetBrush(BRUSH_TYPE eType_) { return m_arrBrush[(UINT)eType_]; }
+	HPEN		GetPen(PEN_TYPE eType_) { return m_arrPen[(UINT)eType_]; }
+
+
+private:
+	void CreateBrushPen();
 
 private:
 	HWND	m_hWnd;				// 메인 윈도우 핸들
@@ -57,4 +65,9 @@ private:
 
 	HBITMAP m_hBit;
 	HDC		m_memDC;
+
+	// 자주 사용하는 GDI Object
+	HBRUSH	m_arrBrush[(UINT)BRUSH_TYPE::END];
+	HPEN	m_arrPen[(UINT)PEN_TYPE::END];
+
 };

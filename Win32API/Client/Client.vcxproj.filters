@@ -62,6 +62,12 @@
     <Filter Include="Engine\03. Manager\PathManager">
       <UniqueIdentifier>{e90fa277-02f6-4ac0-b86c-da7de77a87a0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03. Manager\ResourceManager">
+      <UniqueIdentifier>{44eadbdd-254f-49bf-8ca1-5d322c126aa5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\07. Component">
+      <UniqueIdentifier>{3202b7f7-70b2-4722-af3e-90e057d75c02}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CCore.h">
@@ -131,6 +137,12 @@
     <ClInclude Include="CPathManager.h">
       <Filter>Engine\03. Manager\PathManager</Filter>
     </ClInclude>
+    <ClInclude Include="CResourceManager.h">
+      <Filter>Engine\03. Manager\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CCollider.h">
+      <Filter>Engine\07. Component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Client.rc">
@@ -194,6 +206,12 @@
     </ClCompile>
     <ClCompile Include="CPathManager.cpp">
       <Filter>Engine\03. Manager\PathManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CResourceManager.cpp">
+      <Filter>Engine\03. Manager\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CCollider.cpp">
+      <Filter>Engine\07. Component</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

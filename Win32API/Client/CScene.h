@@ -24,6 +24,7 @@ public:
 	virtual void	Exit() = 0;  // 해당 Scene 에서 퇴장
 
 	void			update();
+	void			finalUpdate();
 	void			render(HDC dc_);
 
 	void			SetName(const wstring& strName_) { m_strName = strName_; }

@@ -22,7 +22,7 @@ void CPathManager::init()
 	// 실행 파일 실행 : 실행 파일 경로
 	GetCurrentDirectory(255, m_szContentPath);
 
-	int iLen = wcslen(m_szContentPath);
+	int iLen = (int)wcslen(m_szContentPath);
 	for (int i = iLen - 1; i >= 0; --i)
 	{
 		if ('\\' == m_szContentPath[i])

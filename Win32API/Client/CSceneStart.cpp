@@ -17,15 +17,15 @@ CSceneStart::~CSceneStart()
 
 void CSceneStart::Enter()
 {
-	// Texture 로딩
-	CTexture* pTex = new CTexture;
-	wstring strFilepath = CPathManager::GetInstance()->GetContentPath();
+	//// Texture 로딩
+	//CTexture* pTex = new CTexture;
+	//wstring strFilepath = CPathManager::GetInstance()->GetContentPath();
 
-	// 이미지 파일은 24비트 bmp 파일이어야 함
-	strFilepath += L"texture\\Player.bmp";
-	pTex->Load(strFilepath);
+	//// 이미지 파일은 24비트 bmp 파일이어야 함
+	//strFilepath += L"texture\\Player.bmp";
+	//pTex->Load(strFilepath);
 
-	delete pTex;
+	//delete pTex;
 
 	// Object 추가 - 실제 생성된 것은 Player 객체
 	CObject* pObj = new CPlayer;

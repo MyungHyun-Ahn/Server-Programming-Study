@@ -38,4 +38,25 @@ public:
 		x = (float)pt_.x;
 		y = (float)pt_.y;
 	}
+
+	Vec2 operator+(Vec2 vOther_)
+	{
+		return Vec2(x + vOther_.x, y + vOther_.y);
+	}
+
+	Vec2 operator-(Vec2 vOther_)
+	{
+		return Vec2(x - vOther_.x, y - vOther_.y);
+	}
+
+	Vec2 operator*(Vec2 vOther_)
+	{
+		return Vec2(x * vOther_.x, y * vOther_.y);
+	}
+
+	Vec2 operator/(Vec2 vOther_)
+	{
+		assert(!(vOther_.x == 0.f || vOther_.y == 0.f));
+		return Vec2(x / vOther_.x, y / vOther_.y);
+	}
 };

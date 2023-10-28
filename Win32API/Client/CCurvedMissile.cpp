@@ -22,7 +22,7 @@ void CCurvedMissile::update()
 	POINT resolution = CCore::GetInstance()->GetResolution();
 
 	vPos.y += m_fSpeed * fDT * m_fDir;
-	vPos.x = (m_fDistance * sinf((vPos.y - (double)m_vCenter.y) * PI / 180.f) + m_vCenter.x);
+	vPos.x = (m_fDistance * sinf((vPos.y - m_vCenter.y) * PI / 180.f) + m_vCenter.x);
 
 	SetPos(vPos);
 

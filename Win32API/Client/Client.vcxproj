@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CCollider.h" />
+    <ClInclude Include="CCollisionManager.h" />
     <ClInclude Include="CCore.h" />
     <ClInclude Include="CCurvedMissile.h" />
     <ClInclude Include="CKeyManager.h" />
@@ -168,11 +169,13 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="CResourceManager.h" />
+    <ClInclude Include="SelectGDI.h" />
     <ClInclude Include="struct.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CCollider.cpp" />
+    <ClCompile Include="CCollisionManager.cpp" />
     <ClCompile Include="CCore.cpp" />
     <ClCompile Include="CCurvedMissile.cpp" />
     <ClCompile Include="CKeyManager.cpp" />
@@ -191,6 +194,7 @@
     <ClCompile Include="CTimeManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="CResourceManager.cpp" />
+    <ClCompile Include="SelectGDI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Client.rc" />

@@ -5,7 +5,7 @@ class CTexture;
 
 class CResourceManager
 {
-	SINGLE(CResourceManager);
+	SINGLE(CResourceManager)
 
 public:
 	CTexture* LoadTexture(const wstring& strKey_, const wstring& strRelativePath_);

@@ -68,6 +68,12 @@
     <Filter Include="Engine\07. Component">
       <UniqueIdentifier>{3202b7f7-70b2-4722-af3e-90e057d75c02}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\08. Module">
+      <UniqueIdentifier>{2c00941c-f2c6-48fc-9d9c-1d37239914c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03. Manager\CollisionManager">
+      <UniqueIdentifier>{292e97ab-65d5-4d2e-b420-d32d2bde5b61}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CCore.h">
@@ -143,6 +149,10 @@
     <ClInclude Include="CCollider.h">
       <Filter>Engine\07. Component</Filter>
     </ClInclude>
+    <ClInclude Include="SelectGDI.h" />
+    <ClInclude Include="CCollisionManager.h">
+      <Filter>Engine\03. Manager\CollisionManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Client.rc">
@@ -212,6 +222,10 @@
     </ClCompile>
     <ClCompile Include="CCollider.cpp">
       <Filter>Engine\07. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectGDI.cpp" />
+    <ClCompile Include="CCollisionManager.cpp">
+      <Filter>Engine\03. Manager\CollisionManager</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

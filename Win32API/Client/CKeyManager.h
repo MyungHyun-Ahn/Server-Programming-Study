@@ -72,7 +72,7 @@ struct stKeyInfo
 
 class CKeyManager
 {
-	SINGLE(CKeyManager);
+	SINGLE(CKeyManager)
 
 public:
 	void init();

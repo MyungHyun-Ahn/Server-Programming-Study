@@ -10,7 +10,7 @@
 
 class CTimeManager
 {
-	SINGLE(CTimeManager);
+	SINGLE(CTimeManager)
 
 public:
 	void		init();

@@ -2,7 +2,7 @@
 
 class CPathManager
 {
-	SINGLE(CPathManager);
+	SINGLE(CPathManager)
 
 public:
 	void init();

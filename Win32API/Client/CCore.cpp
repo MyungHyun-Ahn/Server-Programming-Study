@@ -5,6 +5,7 @@
 #include "CKeyManager.h"
 #include "CSceneManager.h"
 #include "CPathManager.h"
+#include "CCollisionManager.h"
 
 // CCore* CCore::pCore = nullptr;
 // 윈도우 함수에서 반환 값 대부분 HRESULT hr
@@ -78,6 +79,7 @@ int CCore::init(HWND hWnd_, POINT ptResolution_)
 	CTimeManager::GetInstance()->init();
 	CKeyManager::GetInstance()->init();
 	CSceneManager::GetInstance()->init();
+	CCollisionManager::GetInstance()->init();
 
 	return S_OK;
 }
@@ -95,7 +97,9 @@ void CCore::progress()
 	// Manager Update
 	CTimeManager::GetInstance()->update();
 	CKeyManager::GetInstance()->update();
+
 	CSceneManager::GetInstance()->update();
+	CCollisionManager::GetInstance()->update();
 
 
 	// Rendering
@@ -115,6 +119,6 @@ void CCore::CreateBrushPen()
 	 
 	// red blue green pen - 직접 삭제 O
 	m_arrPen[(UINT)PEN_TYPE::RED] = CreatePen(PS_SOLID, 1, RGB(255, 0, 0));
-	m_arrPen[(UINT)PEN_TYPE::BLUE] = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
-	m_arrPen[(UINT)PEN_TYPE::GREEN] = CreatePen(PS_SOLID, 1, RGB(0, 0, 255));
+	m_arrPen[(UINT)PEN_TYPE::GREEN] = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
+	m_arrPen[(UINT)PEN_TYPE::BLUE] = CreatePen(PS_SOLID, 1, RGB(0, 0, 255));
 }

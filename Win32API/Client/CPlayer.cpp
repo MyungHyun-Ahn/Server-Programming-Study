@@ -9,6 +9,7 @@
 #include "CTexture.h"
 #include "CPathManager.h"
 #include "CResourceManager.h"
+#include "CCollider.h"
 
 // 리소스 매니저가 없다면 어디서 리소스가 로딩되는지 추적이 불가능
 
@@ -18,6 +19,9 @@ CPlayer::CPlayer() : m_pTex(nullptr)
 	m_pTex = CResourceManager::GetInstance()->LoadTexture(L"PlayerTex", L"texture\\Player.bmp");
 
 	CreateCollider();
+
+	GetCollider()->SetOffsetPos(Vec2(0.f, 12.f));
+	GetCollider()->SetScale(Vec2(20.f, 30.f));
 
 	//m_pTex = new CTexture;
 	//wstring strFilepath = CPathManager::GetInstance()->GetContentPath();
@@ -97,6 +101,8 @@ void CPlayer::render(HDC dc_)
 		, m_pTex->GetDC()
 		, 0, 0, iWidth, iHeight
 		, RGB(255, 0, 255));
+
+	ComponentRender(dc_);
 }
 
 void CPlayer::CreateMissile()

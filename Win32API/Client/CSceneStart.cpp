@@ -6,6 +6,7 @@
 #include "CCore.h"
 #include "CTexture.h"
 #include "CPathManager.h"
+#include "CCollisionManager.h"
 
 CSceneStart::CSceneStart()
 {
@@ -17,23 +18,13 @@ CSceneStart::~CSceneStart()
 
 void CSceneStart::Enter()
 {
-	//// Texture 로딩
-	//CTexture* pTex = new CTexture;
-	//wstring strFilepath = CPathManager::GetInstance()->GetContentPath();
-
-	//// 이미지 파일은 24비트 bmp 파일이어야 함
-	//strFilepath += L"texture\\Player.bmp";
-	//pTex->Load(strFilepath);
-
-	//delete pTex;
-
 	// Object 추가 - 실제 생성된 것은 Player 객체
 	CObject* pObj = new CPlayer;
 
 	pObj->SetPos(Vec2(640.f, 384.f));
 	pObj->SetScale(Vec2(100.f, 100.f));
 
-	AddObject(pObj, GROUP_TYPE::DEFAULT);
+	AddObject(pObj, GROUP_TYPE::PLAYER);
 
 	Vec2 vResolution = CCore::GetInstance()->GetResolution();
 
@@ -53,10 +44,17 @@ void CSceneStart::Enter()
 		pMonsterObj->SetMoveDIstance(fMoveDist);
 		pMonsterObj->SetCenterPos(pMonsterObj->GetPos());
 
-		AddObject(pMonsterObj, GROUP_TYPE::DEFAULT);
+		AddObject(pMonsterObj, GROUP_TYPE::MONSTER);
 	}
+
+	// 충돌 지정
+	// Player 그룹과 Monster 그룹 간의 충돌체크
+	CCollisionManager::GetInstance()->CheckGroup(GROUP_TYPE::PLAYER, GROUP_TYPE::MONSTER);
 }
 
 void CSceneStart::Exit()
 {
+	// 충돌 지정해놨던 것을 해제
+	CCollisionManager::GetInstance()->Reset();
+
 }

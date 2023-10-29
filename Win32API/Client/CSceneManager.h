@@ -4,7 +4,7 @@ class CScene;
 
 class CSceneManager
 {
-	SINGLE(CSceneManager);
+	SINGLE(CSceneManager)
 
 public:
 	void init();

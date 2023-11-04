@@ -32,10 +32,12 @@ public:
 
 	// 헤더에 함수를 작성하면 인라인
 	// 함수 호출 비용이 없음
-	void			AddObject(CObject* pObj_, GROUP_TYPE type_)
-	{
-		m_vecObj[(UINT)type_].push_back(pObj_);
-	}
+	void			AddObject(CObject* pObj_, GROUP_TYPE type_) { m_vecObj[(UINT)type_].push_back(pObj_); }
+
+	// 벡터를 반환하면 복사해서 반환
+	// 참조 타입으로 줌으로 원본을 그대로 전달
+	// 윈본을 수정하면 안됨, 충돌 체크에만 사용
+	const vector<CObject*>& GetGroupObject(GROUP_TYPE eType_) { return m_vecObj[(UINT)eType_]; }
 
 private:
 	wstring				m_strName; // Scene 이름

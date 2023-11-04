@@ -28,7 +28,7 @@ void CSceneStart::Enter()
 
 	Vec2 vResolution = CCore::GetInstance()->GetResolution();
 
-	int iMonCount = 10;
+	int iMonCount = 3;
 	float fMoveDist = 25.f;
 	float fObjScale = 50.f;
 	float fTerm = (vResolution.x - ((fMoveDist + fObjScale / 2.f) * 2)) / (float)(iMonCount - 1);

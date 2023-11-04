@@ -32,3 +32,7 @@ private:
 	UINT			m_iFPS;
 };
 
+// LARGE_INTEGER
+// union
+// 구조체랑 비슷
+// 유니온의 특징 - 구조체와 비교

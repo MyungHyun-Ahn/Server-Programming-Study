@@ -149,9 +149,11 @@
     <ClInclude Include="CCollider.h">
       <Filter>Engine\07. Component</Filter>
     </ClInclude>
-    <ClInclude Include="SelectGDI.h" />
     <ClInclude Include="CCollisionManager.h">
       <Filter>Engine\03. Manager\CollisionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectGDI.h">
+      <Filter>Engine\08. Module</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -223,9 +225,11 @@
     <ClCompile Include="CCollider.cpp">
       <Filter>Engine\07. Component</Filter>
     </ClCompile>
-    <ClCompile Include="SelectGDI.cpp" />
     <ClCompile Include="CCollisionManager.cpp">
       <Filter>Engine\03. Manager\CollisionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectGDI.cpp">
+      <Filter>Engine\08. Module</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

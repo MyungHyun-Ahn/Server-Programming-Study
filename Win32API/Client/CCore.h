@@ -42,7 +42,7 @@
 
 class CCore
 {
-	SINGLE(CCore);
+	SINGLE(CCore)
 public:
 	int			init(HWND hWnd_, POINT ptResolution_);
 	void		progress();

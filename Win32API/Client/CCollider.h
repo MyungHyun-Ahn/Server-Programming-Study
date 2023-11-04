@@ -9,24 +9,41 @@ class CCollider
 {
 public:
 	CCollider();
+	CCollider(const CCollider& origin_);
+
 	~CCollider();
+
+	// 대입 연산자 삭제
+	CCollider& operator = (CCollider& origin_) = delete;
 
 	friend class CObject;
 
 	void finalUpdate();
 	void render(HDC dc_);
+
+	void OnCollision(CCollider* pOther_); // 충돌 중인 경우 호출
+	void OnCollisionEnter(CCollider* pOther_); // 충돌 진입 시
+	void OnCollisionExit(CCollider* pOther_); // 충돌 해제 시
 	
 	void SetOffsetPos(Vec2 vPos_) { m_vOffsetPos = vPos_; }
 	void SetScale(Vec2 vScale_) { m_vScale = vScale_; }
 
 	Vec2 GetOffsetPos() { return m_vOffsetPos; }
 	Vec2 GetScale() { return m_vScale; }
+	Vec2 GetFinalPos() { return m_vFinalPos; }
+
+	UINT GetID() { return m_iID; }
 
 private:
+	static UINT g_iNextID;
+
 	CObject*	m_pOwner;
 	Vec2		m_vOffsetPos;
 	Vec2		m_vFinalPos; // 최종 위치
 	Vec2		m_vScale; // 충돌체의 크기
+
+	UINT		m_iID; // 충돌체 고유한 ID
+	UINT		m_iCol;
 };
 
 // Offset?

@@ -16,7 +16,7 @@ CMonster::CMonster()
 	, m_iMissileCool(5000)
 {
 	CreateCollider();
-	GetCollider()->SetScale(Vec2(50.f, 50.f));
+	GetCollider()->SetScale(Vec2(40.f, 40.f));
 }
 
 CMonster::~CMonster()
@@ -25,6 +25,7 @@ CMonster::~CMonster()
 
 void CMonster::update()
 {
+	return;
 	CheckMissileCoolTime();
 
 	Vec2 vCurPos = GetPos();

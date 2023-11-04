@@ -109,7 +109,7 @@ void CCore::progress()
 
 	BitBlt(m_hDC, 0, 0, m_ptResolution.x, m_ptResolution.y, m_memDC, 0, 0, SRCCOPY);
 
-	// CTimeManager::GetInstance()->render();
+	CTimeManager::GetInstance()->render();
 }
 
 void CCore::CreateBrushPen()

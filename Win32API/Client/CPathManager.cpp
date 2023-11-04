@@ -37,5 +37,5 @@ void CPathManager::init()
 	// 상위 폴더로
 	// m_szContentPath + bin\\content\\ 
 
-	SetWindowText(CCore::GetInstance()->GetMainHandle(), m_szContentPath);
+	// SetWindowText(CCore::GetInstance()->GetMainHandle(), m_szContentPath);
 }
